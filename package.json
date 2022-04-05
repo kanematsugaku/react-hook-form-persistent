@@ -1,0 +1,60 @@
+{
+  "name": "react-hook-form-persistent",
+  "version": "0.0.1",
+  "description": "A very simple library for persisting react-hook-form state.",
+  "license": "MIT",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kanematsugaku/react-hook-form-persistent.git"
+  },
+  "author": "Gaku Kanematsu",
+  "keywords": [
+    "react-hook-form",
+    "persist",
+    "persistent",
+    "persistence"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-hook-form": "^7.29.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/eslint": "^8.4.1",
+    "@types/prettier": "^2.4.4",
+    "@types/react": "^17.0.43",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "copy": "cp -r src/* example/src/lib/",
+    "link": "npm run build && npm link && cd example && npm link react-hook-form-persistent",
+    "unlink": "cd example && npm unlink react-hook-form-persistent && cd .. && npm unlink react-hook-form-persistent && npm uninstall --g react-hook-form-persistent",
+    "prepublishOnly": "npm run build",
+    "lint:tsc": "tsc --noEmit",
+    "lint:eslint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "fix:eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:prettier": "prettier --check src",
+    "fix:prettier": "prettier --write src",
+    "lint:all": "npm run lint:tsc && npm run lint:eslint && npm run lint:prettier",
+    "ncu:check": "npx -y npm-check-updates",
+    "ncu:update": "npx -y npm-check-updates -i -u",
+    "typesync": "npx -y typesync",
+    "depcheck": "npx -y depcheck"
+  }
+}
