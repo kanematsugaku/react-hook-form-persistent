@@ -3,7 +3,7 @@ import useFormPersist from './lib/main';
 
 type FormField = {
   name: string;
-  age: number;
+  email: number;
 };
 
 export default function App() {
@@ -17,12 +17,11 @@ export default function App() {
           <input id="name" type="text" {...register('name')} />
         </div>
         <div>
-          <label htmlFor="age">Age:</label>
-          <input id="age" type="number" {...register('age')} />
+          <label htmlFor="email">Email:</label>
+          <input id="email" type="email" {...register('email')} />
         </div>
         <button type="submit">Submit</button>
       </form>
-      <hr />
       <button onClick={() => window.location.reload()}>Reload</button>
     </div>
   );
